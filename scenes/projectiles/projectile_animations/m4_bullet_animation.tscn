@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://cvv8wdprhevxn"]
+
+[ext_resource type="Script" path="res://scenes/prefabs/projectile_animation_effect.gd" id="1_fju5b"]
+[ext_resource type="Texture2D" uid="uid://bq1hfun5lwwd5" path="res://assets/spritesheets/arbulletanimation-Sheet.png" id="1_tlysc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6ls1"]
+atlas = ExtResource("1_tlysc")
+region = Rect2(0, 0, 3, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52hql"]
+atlas = ExtResource("1_tlysc")
+region = Rect2(3, 0, 3, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efon1"]
+atlas = ExtResource("1_tlysc")
+region = Rect2(6, 0, 3, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jo4uu"]
+atlas = ExtResource("1_tlysc")
+region = Rect2(9, 0, 3, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgfke"]
+atlas = ExtResource("1_tlysc")
+region = Rect2(12, 0, 3, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_415qa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6ls1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52hql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efon1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jo4uu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgfke")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BulletEffectAnimation" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_415qa")
+speed_scale = 3.0
+script = ExtResource("1_fju5b")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

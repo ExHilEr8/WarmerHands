@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://0muty6of8d2n"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_s2mpy"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_s2mpy")
+scene_to_set = "res://scenes/testing_scenes/weapon_testing.tscn"

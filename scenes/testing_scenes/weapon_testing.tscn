@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://br3avcx35aess"]
+
+[ext_resource type="PackedScene" uid="uid://dbwiyy32jjiv8" path="res://scenes/player/player.tscn" id="1_vj7yp"]
+[ext_resource type="Script" path="res://scenes/weapons/weapon_container.gd" id="2_oncew"]
+[ext_resource type="PackedScene" uid="uid://cv3jeqsihp3ey" path="res://scenes/weapons/assault_rifles/m4.tscn" id="3_si20m"]
+
+[node name="WeaponTesting" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_vj7yp")]
+
+[node name="WeaponContainer" type="Node2D" parent="Player"]
+script = ExtResource("2_oncew")
+
+[node name="Weapon" parent="Player/WeaponContainer" instance=ExtResource("3_si20m")]
+position = Vector2(32, 1)
+fire_rate = 0.05
+magazine_size = 999999
+reserve_ammo = 999999
